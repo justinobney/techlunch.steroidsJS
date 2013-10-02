@@ -1,0 +1,17 @@
+<div class="topcoat-list__container white-bg" ng-controller="DrawerCtrl">
+    <ul class="topcoat-list">
+        <li class="topcoat-list__item" hm-tap="navigate('main/index.html')">Timeline</li>
+        <li class="topcoat-list__item" hm-tap="navigate('echoPlugin/index.html')">Scores</li>
+        <li class="topcoat-list__item" hm-tap="navigate('camera/index.html')">Games</li>
+        <li class="topcoat-list__item" hm-tap="navigate('main/disabled.html')">Schools</li>
+    </ul>
+    <br>
+    <h3 class="topcoat-list__header">Favorites</h3>
+    <ul class="topcoat-list">
+        <li class="topcoat-list__item" hm-tap="" ng-repeat="favorite in favorites">
+            {{ favorite.name }}
+        </li>
+        <li class="topcoat-list__item"></li>
+    </ul>
+
+</div>

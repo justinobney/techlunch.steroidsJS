@@ -1,0 +1,12 @@
+<div ng-controller="IndexCtrl" class="content-padded camera">
+  <div class="topcoat-button--cta block full center" hm-tap="getPicture(cameraOptions.fromCamera)">Capture photo</div>
+  <div class="topcoat-button block full center" hm-tap="getPicture(cameraOptions.fromPhotoLibrary)">Choose from Photo Library</div>
+
+  <p>The selected photo gets moved from the default Cordova <code>tmp</code> folder to</p>
+  <code><small>sterois.app.absoluteUserFilesPath</small></code>
+  <p>and is then rendered below via <code>localhost</code>, without requiring an absolute <code>file://</code> URL.</p>
+
+  <h2 ng-hide="imageSrc">No photo selected yet.</h2>
+  <img id="photo" ng-src="{{imageSrc}}" ng-hide="showSpinner">
+  <img class="spinner" src="/vendor/topcoat/img/spinner2x.png" ng-show="showSpinner">
+</div>

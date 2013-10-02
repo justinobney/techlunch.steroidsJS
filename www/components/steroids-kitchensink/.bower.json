@@ -1,0 +1,14 @@
+{
+  "name": "myProject",
+  "version": "0.0.1",
+  "dependencies": {
+    "steroids-js": "2.7.x",
+    "angular": "1.0.7",
+    "underscore": "1.5.1",
+    "restangular": "1.0.7"
+  },
+  "_source": "/Users/harsa/Documents/AppGyver/Example apps/kitchensink/config/bower.json",
+  "_target": "*",
+  "_originalSource": "/Users/harsa/Documents/AppGyver/Example apps/kitchensink/config/bower.json",
+  "_direct": true
+}

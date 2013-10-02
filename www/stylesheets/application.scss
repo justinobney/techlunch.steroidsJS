@@ -1,0 +1,48 @@
+* {
+  -webkit-user-select: none;  /* Disable selection/copy of elements when tapping for a long time */
+  -webkit-touch-callout: none; /* Disable touch callouts */
+}
+
+input {
+  -webkit-user-select: text;  /* Allow selection for input elements */
+}
+
+.content-padded {
+  padding: 10px;
+}
+
+/* Spinner styles */
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  background-image: url("../../vendor/topcoat/img/spinner2x.png");
+  background-size: 36px;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 1000;
+  left: 45%;
+  top: 45%;
+  -webkit-animation-name:            rotate;
+  -webkit-animation-duration:        1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+
+/* Block buttons */
+
+.topcoat-button.block, .topcoat-button--cta.block {
+  margin-bottom:15px;
+}
+.block {
+  display:block;
+}

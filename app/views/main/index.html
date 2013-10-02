@@ -1,0 +1,12 @@
+<div class="topcoat-list__container white-bg" ng-controller="IndexCtrl">
+  <h3 class="topcoat-list__header">Timeline</h3>
+  <ul class="topcoat-list">
+    <li class="topcoat-list__item" hm-tap="" ng-repeat="event in timelineEvents">
+      {{ event.sport }}
+      <br>{{ event.date }}
+      <br>{{ event.home.score }} - {{ event.home.name }}
+      <br>{{ event.away.score }} - {{ event.away.name }}
+      <br>
+    </li>
+  </ul>
+</div>
