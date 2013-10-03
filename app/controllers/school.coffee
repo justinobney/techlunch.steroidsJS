@@ -14,15 +14,12 @@ schoolsApp.controller 'IndexCtrl', ($scope, NavigationService, SchoolData)->
 
   init()
 
-schoolsApp.controller 'DetailCtrl', ($scope, SchoolData)->
+schoolsApp.controller 'DetailCtrl', ($scope, SchoolData, MessageService)->
 
   schoolMap = {}
 
   $scope.toggleFavorite = (fav)->
-    msg =
-      fav: fav
-      action: "school/add-favorite"
-    window.postMessage(msg, "*")
+    MessageService.publish "school/add-favorite", fav
     SchoolData.add fav
 
   init = ()->

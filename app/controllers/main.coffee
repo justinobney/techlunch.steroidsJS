@@ -26,7 +26,7 @@ mainApp.controller 'IndexCtrl', ($scope, $timeout, TimelineData, FavoritesData)-
 
   init()
 
-mainApp.controller 'DrawerCtrl', ($scope, NavigationService, FavoritesData)->
+mainApp.controller 'DrawerCtrl', ($scope, NavigationService, FavoritesData, MessageService)->
 
   $scope.navigate = (url)->
     NavigationService.navigate url
@@ -35,11 +35,9 @@ mainApp.controller 'DrawerCtrl', ($scope, NavigationService, FavoritesData)->
     $scope.favorites = FavoritesData.favorites
 
     # Listen for messages sent to our drawer example
-    window.addEventListener "message", (msg)->
-      if msg.data.action is "school/add-favorite"
-        $scope.$apply ()->
-          FavoritesData.add msg.data.fav
-          $scope.favorites = FavoritesData.favorites
+    MessageService.subscribe "school/add-favorite", (data)->
+      FavoritesData.add data
+      $scope.favorites = FavoritesData.favorites
 
   init()
 

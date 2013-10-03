@@ -8,7 +8,7 @@
 #
 # to create a cloud-deployed build of your app.
 
-steroids.config.name = "Steroids Kitchensink"
+steroids.config.name = "LHSAA Demo"
 
 # -- Location: steroids.config.location --
 # Defines the location of the HTML document that Steroids will load when your app starts.

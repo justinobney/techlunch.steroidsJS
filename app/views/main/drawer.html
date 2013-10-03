@@ -8,7 +8,8 @@
     <br>
     <h3 class="topcoat-list__header">Favorites</h3>
     <ul class="topcoat-list">
-        <li class="topcoat-list__item" hm-tap="" ng-repeat="favorite in favorites">
+        <li class="topcoat-list__item" ng-repeat="favorite in favorites"
+            hm-tap="navigate('school/detail.html?id=' + favorite.id)">
             {{ favorite.name }}
         </li>
         <li class="topcoat-list__item"></li>
