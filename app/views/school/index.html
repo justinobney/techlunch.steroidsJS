@@ -1,0 +1,11 @@
+<div class="topcoat-list__container white-bg" ng-controller="IndexCtrl">
+  <ul class="topcoat-list">
+    <li class="topcoat-list__item" ng-repeat="school in schools"
+      hm-tap="navigate('school/detail.html?id={{school.id}}')">
+      {{ school.name }}
+      <br>{{ school.id }}
+    </li>
+  </ul>
+  <br>
+  <div class="topcoat-button--cta block full center" hm-tap="add()">Add Data</div>
+</div>

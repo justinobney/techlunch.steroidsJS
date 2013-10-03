@@ -1,32 +1,11 @@
 [
   {
-    "example_id": 1,
-    "name": "Calendar Plugin",
-    "url": "/views/calendar/index.html"
-  },
-  {
-    "example_id": 2,
-    "name": "Facebook Plugin (iOS only)",
-    "url": "/views/facebook/plugin.html"
-  },
-  {
-    "example_id": 3,
-    "name": "Echo Plugin test",
-    "url": "/views/echoPlugin/index.html"
-  },
-  {
-    "example_id": 1,
-    "name": "Calendar Plugin",
-    "url": "/views/calendar/index.html"
-  },
-  {
-    "example_id": 2,
-    "name": "Facebook Plugin (iOS only)",
-    "url": "/views/facebook/plugin.html"
-  },
-  {
-    "example_id": 3,
-    "name": "Echo Plugin test",
-    "url": "/views/echoPlugin/index.html"
+    "id": 1,
+    "name": "Abbeville",
+    "url": "/views/school/index.html?id=1"
+  }, {
+    "id": 3,
+    "name": "Denham Springs",
+    "url": "/views/school/index.html?id=3"
   }
 ]
