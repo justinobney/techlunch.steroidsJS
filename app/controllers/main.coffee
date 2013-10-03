@@ -1,7 +1,7 @@
 document.addEventListener "deviceready", ->
   angular.bootstrap document, ['mainApp']
 
-mainApp = angular.module 'mainApp', ['TimelineModel', 'FavoritesModel', 'hmTouchevents']
+mainApp = angular.module 'mainApp', ['RootApp', 'TimelineModel', 'FavoritesModel', 'hmTouchevents']
 
 mainApp.controller 'IndexCtrl', ($scope, $timeout, TimelineData)->
 
@@ -51,7 +51,7 @@ mainApp.controller 'IndexCtrl', ($scope, $timeout, TimelineData)->
 
   init()
 
-mainApp.controller 'DrawerCtrl', ($scope, FavoritesRestangular)->
+mainApp.controller 'DrawerCtrl', ($scope, NavigationService, FavoritesData)->
 
   $scope.sendMessage = (selection)->
     msg =
@@ -59,15 +59,10 @@ mainApp.controller 'DrawerCtrl', ($scope, FavoritesRestangular)->
       exampleName: "drawer"
     window.postMessage(msg, "*")
 
-  # Helper function for opening new webviews
   $scope.navigate = (url)->
-    webView = new steroids.views.WebView "/views/" + url
-    steroids.layers.push webView
-    steroids.drawers.hideAll()
-    # steroids.modal.show(disabledView)
+    NavigationService.navigate url
 
-  # Fetch all objects from the local JSON (see app/models/cordovaExample.js)
-  $scope.favorites = FavoritesRestangular.all('favorites').getList()
+  $scope.favorites = FavoritesData.favorites
 
 mainApp.controller 'DisabledCtrl', ($scope)->
 

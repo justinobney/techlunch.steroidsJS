@@ -16,20 +16,16 @@
     exports.schools = [
       {
         "id": 1,
-        "name": "Abbeville",
-        "url": "/views/school/index.html?id=1"
+        "name": "Abbeville"
       }, {
         "id": 3,
-        "name": "Denham Springs",
-        "url": "/views/school/index.html?id=3"
+        "name": "Denham Springs"
       }, {
         "id": 4,
-        "name": "BRCC",
-        "url": "/views/school/index.html?id=4"
+        "name": "BRCC"
       }, {
         "id": 9,
-        "name": "NoWhere Ville",
-        "url": "/views/school/index.html?id=9"
+        "name": "NoWhere Ville"
       }
     ];
 

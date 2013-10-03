@@ -8,22 +8,22 @@ if ( typeof angular == 'undefined' ) {
 }
 
 
-var favoritesModule = angular.module('FavoritesModel', ['restangular']);
+var favoritesModule = angular.module('FavoritesModel', []);
 
-favoritesModule.factory('FavoritesRestangular', function(Restangular) {
+favoritesModule.factory('FavoritesData', function() {
+  var exports = {};
 
-  return Restangular.withConfig(function(RestangularConfigurer) {
+  exports.favorites = [
+    {
+      id: 1,
+      name: 'Abbeville'
+    }, {
+      id: 3,
+      name: 'Denham Springs'
+    }
+  ];
 
-    RestangularConfigurer.setBaseUrl('http://localhost/data');
-    RestangularConfigurer.setRequestSuffix('.json');
-    RestangularConfigurer.setRestangularFields({
-      id: "example_id",
-      name: "name",
-      url: "url"
-    });
-
-  });
-
+  return exports;
 });
 
 
