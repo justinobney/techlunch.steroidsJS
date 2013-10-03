@@ -23,6 +23,10 @@ favoritesModule.factory('FavoritesData', function() {
     }
   ];
 
+  exports.add = function(fav){
+    exports.favorites.push(fav);
+  };
+
   return exports;
 });
 

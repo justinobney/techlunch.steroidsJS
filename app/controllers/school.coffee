@@ -21,8 +21,9 @@ schoolsApp.controller 'DetailCtrl', ($scope, SchoolData)->
   $scope.toggleFavorite = (fav)->
     msg =
       fav: fav
-      from: "schools"
+      action: "school/add-favorite"
     window.postMessage(msg, "*")
+    SchoolData.add fav
 
   init = ()->
     steroids.view.navigationBar.show "School Detail"

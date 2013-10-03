@@ -3,7 +3,7 @@ document.addEventListener "deviceready", ->
 
 mainApp = angular.module 'mainApp', ['RootApp', 'TimelineModel', 'FavoritesModel', 'hmTouchevents']
 
-mainApp.controller 'IndexCtrl', ($scope, $timeout, TimelineData)->
+mainApp.controller 'IndexCtrl', ($scope, $timeout, TimelineData, FavoritesData)->
 
   $scope.add = ()->
     data =
@@ -23,9 +23,8 @@ mainApp.controller 'IndexCtrl', ($scope, $timeout, TimelineData)->
   init = ()->
     # Listen for messages sent to our drawer example
     window.addEventListener "message", (msg)->
-      if msg.data.exampleName is "drawer"
-        $scope.selectedInDrawer = msg.data.selection
-        $scope.$apply()
+      if msg.data.action is "school/add-favorite"
+        steroids.drawers.show(leftDrawer)
 
     # Initialize the left drawer
     leftDrawer = new steroids.views.WebView("/views/main/drawer.html")
@@ -53,16 +52,20 @@ mainApp.controller 'IndexCtrl', ($scope, $timeout, TimelineData)->
 
 mainApp.controller 'DrawerCtrl', ($scope, NavigationService, FavoritesData)->
 
-  $scope.sendMessage = (selection)->
-    msg =
-      selection: selection
-      exampleName: "drawer"
-    window.postMessage(msg, "*")
-
   $scope.navigate = (url)->
     NavigationService.navigate url
 
-  $scope.favorites = FavoritesData.favorites
+  init = ()->
+    $scope.favorites = FavoritesData.favorites
+
+    # Listen for messages sent to our drawer example
+    window.addEventListener "message", (msg)->
+      if msg.data.action is "school/add-favorite"
+        $scope.$apply ()->
+          FavoritesData.add msg.data.fav
+          $scope.favorites = FavoritesData.favorites
+
+  init()
 
 mainApp.controller 'DisabledCtrl', ($scope)->
 
